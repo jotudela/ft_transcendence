@@ -94,7 +94,7 @@ My final grade :
 
 ![](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-### 👨‍💻 Authors�
+### 👨‍💻 Authors
 
 - Arnaud Fontan ([@afontan](https://github.com/arnaudfontan)): Responssible of the frontend and game.
 - Federico fwebe-ir ([@ReIVen](https://github.com/ReivenIV)): Responssible of the Database and Backend.
