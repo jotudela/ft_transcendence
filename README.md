@@ -32,6 +32,62 @@ More than a technical milestone, `ft_transcendence` reflects the 42 ethos: innov
 
 ## 🔒 SECURITY
 
+- JWT Authentication: All connection are linked to **JWT Token**.
+- OAuth 2.0: Implement Google auth, for connect your Google account.
+- Two Factor Authentication: Integrated 2FA with the app `Authenticator` from Google, wich enchence security.
+---
+
+### 🎮 GAME & TOURNAMENTS
+
+- Classic PONG: You can play (localy only) the basic Pong game !
+- Tournament: You can create/participate in tournament (localy only).
+- AI: You can play versus a **BOT** wich have different level:
+  - easy: this bot is very nervous and returns the ball not often.
+  - medium: this bot is better, wich can resturns the ball much more often.
+  - hard: this bot is really difficult, wich can predict the ball will land with the bounces !
+- Game Mode: When youre not log, you can play with **4 players** ! and you have **2 balls** !
+- Game Customization: In the background in a game, you can change the color (blue, red, green).
+---
+
+## 👥 USER MANAGEMENT and STATS
+
+- Profile: You can see your information and modify in **Settings**.
+- Stats: You have two differents Tabs for stats:
+  - `Global Stats`: see your wins, losts and all your **points** from your first game to the last game.
+  - `Match History`: see all your match, only loged 1vs1 and 1vs1 in tournaments.
+---
+
+# ✨ ALL MODULES
+
+| Number | Name |
+| :---:  | :---:|
+|1| Major module: Use a framework to build the backend. |
+|2| Minor module: Use a framework or a toolkit to build the frontend. |
+|3| Minor module: Use a database for the backend. |
+|4| Major module: Store the score of a tournament in the Blockchain. |
+|5| Major module: Standard user management, authentication, users across tournaments. |
+|6| Major module: Implementing a remote authentication. |
+|7| Major module: Multiplayer (more than 2 players in the same game). |
+|8| Minor module: Game customization options. |
+|9| Major module: Introduce an AI opponent. |
+|10| Major module: Implement Two-Factor Authentication (2FA) and JWT. |
+|11| Major module: Designing the backend as microservices. |
+|12| Minor module: Support on all devices. |
+|13| Minor module: Expanding browser compatibility. |
+
+> [!NOTE]
+> `Minor modules`: 5% or 1 points for bonus in more (two minor count as one major).
+>
+> `Major modules`: 10% or 2 points for bonus in more.
+---
+
+# 🔧 GLOBAL TECH STACK:
+
+- Backend: Typescript, Fastify, Node.js, API, NGINX, Docker
+- Frontend: Typescript, HTML, Tailwind CSS
+- Auth & Security: JWT, 2FA with Authenticator, OAuth 2.0 (Google)
+- Orchestration: Docker compose
+
 My final grade :
 
 ![](imgs/120_percent.png)
