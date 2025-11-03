@@ -82,7 +82,6 @@ More than a technical milestone, `ft_transcendence` reflects the 42 ethos: innov
 ---
 
 # 🔧 GLOBAL TECH STACK:
-
 - Backend: Typescript, Fastify, Node.js, API, NGINX, Docker
 - Frontend: Typescript, HTML, Tailwind CSS
 - Auth & Security: JWT, 2FA with Authenticator, OAuth 2.0 (Google)
