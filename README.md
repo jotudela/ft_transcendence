@@ -81,7 +81,7 @@ More than a technical milestone, `ft_transcendence` reflects the 42 ethos: innov
 > `Major modules`: 10% or 2 points for bonus in more.
 ---
 
-# 🔧 GLOBAL TECH STACK:
+### 🔧 GLOBAL TECH STACK:
 
 - Backend: Typescript, Fastify, Node.js, API, NGINX, Docker
 - Frontend: Typescript, HTML, Tailwind CSS
