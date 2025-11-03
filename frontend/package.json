@@ -1,0 +1,23 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+"scripts": {
+  "dev": "postcss srcs/style.css -o dist/style.css",
+  "build": "tsc && postcss srcs/style.css -o dist/style.css --minify && cp -r srcs/assets dist/assets",
+  "build:css": "postcss srcs/style.css -o dist/style.css --watch",
+  "build:ts": "npx tsc"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.13",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
+    "tailwindcss": "^4.1.13"
+  },
+  "dependencies": {
+    "tsparticles": "^3.9.1",
+    "tsparticles-engine": "^2.12.0",
+    "tsparticles-preset-triangles": "^2.12.0",
+    "typescript": "^5.9.2"
+  }
+}

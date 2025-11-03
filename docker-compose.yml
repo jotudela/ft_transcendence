@@ -1,0 +1,152 @@
+services:
+  # --- BACKEND SERVICES ---
+  auth-service:
+    build:
+      context: ./backend/api-auth-user
+      dockerfile: Dockerfile
+      args:
+        NODE_VERSION: ${NODE_VERSION}
+    container_name: auth-service
+    ports:
+      - "4000:4000"
+    env_file:
+      - ./backend/api-auth-user/.env
+
+  game-service:
+    build:
+      context: ./backend/game-service
+      dockerfile: Dockerfile
+      args:
+        NODE_VERSION: ${NODE_VERSION}
+    container_name: game-service
+    ports:
+      - "4002:4002"
+
+  # --- DATABASES / EXTRA ---
+  api_bdd:
+    build:
+      context: ./backend/database
+    image: api_bdd
+    container_name: APIBDD
+    ports:
+      - "3020:3020"
+    restart: unless-stopped
+  
+  api_bc:
+    build: ./backend/blockchain
+    image: api_blockchain
+    container_name: APIBC
+    ports:
+      - "3021:3021"
+    env_file:
+      - ./backend/blockchain/.env
+    restart: unless-stopped
+    command: npx node dist/server.js
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3021/health"]
+      interval: 5s
+      timeout: 3s
+      retries: 3
+
+  # --- FRONTEND ---
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: frontend
+    ports:
+      - "3000:80"
+
+  # --- ELK STACK ---
+  elasticsearch:
+    build:
+      context: ./infra/elk/elasticsearch
+      dockerfile: Dockerfile
+    container_name: elasticsearch
+    environment:
+      - discovery.type=single-node
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+      - xpack.security.enabled=false
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    ports:
+      - "9200:9200"
+    volumes:
+      - es_data:/usr/share/elasticsearch/data
+      - ./infra/elk/elasticsearch/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
+    healthcheck:
+      test: ["CMD-SHELL", "curl -s http://localhost:9200 > /dev/null || exit 1"]
+      interval: 10s
+      retries: 5
+
+  logstash:
+    build:
+      context: ./infra/elk/logstash
+      dockerfile: Dockerfile
+    container_name: logstash
+    ports:
+      - "5044:5044"
+      - "5000:5000"
+      - "9600:9600"
+    depends_on:
+      elasticsearch:
+        condition: service_healthy
+    healthcheck:
+        disable: true
+
+
+  kibana:
+    build:
+      context: ./infra/elk/kibana
+      dockerfile: Dockerfile
+    container_name: kibana
+    ports:
+      - "5601:5601"
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+    volumes:
+      - ./infra/elk/kibana/kibana.yml:/usr/share/kibana/config/kibana.yml:ro
+    depends_on:
+      elasticsearch:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:5601 || exit 1"]
+      interval: 10s
+      retries: 10
+
+
+  filebeat:
+    build:
+      context: ./infra/elk/filebeat
+      dockerfile: Dockerfile
+    container_name: filebeat
+    user: root
+    privileged: true
+    depends_on:
+      - logstash
+    volumes:
+      - /var/lib/docker/containers:/var/lib/docker/containers:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+
+
+  # --- REVERSE PROXY + SECURITY ---
+  nginx:
+    image: nginx:${NGINX_VERSION}
+    container_name: nginx
+    ports:
+      - "8080:80"
+      - "8443:8443"
+    volumes:
+      - ./infra/reverse-proxy/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./infra/reverse-proxy/modsecurity.conf:/etc/nginx/modsecurity.conf:ro
+      - ./infra/reverse-proxy/certs:/etc/nginx/certs:ro
+    depends_on:
+      frontend:
+        condition: service_healthy
+
+volumes:
+  es_data:
+    driver: local
+  grafana_data:

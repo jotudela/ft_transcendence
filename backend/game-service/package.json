@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "axios": "^1.11.0",
+    "dotenv": "^17.2.2",
+    "fastify": "^5.6.0",
+    "jsonwebtoken": "^9.0.2"
+  },
+  "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "^24.3.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2",
+    "@fastify/jwt": "^10.0.0",
+    "@types/cookie": "^0.5.3",
+    "@fastify/cookie": "^11.0.2",
+    "@fastify/cors": "^11.1.0"
+  }
+}

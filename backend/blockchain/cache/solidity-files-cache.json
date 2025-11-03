@@ -1,0 +1,41 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/Users/jojo/Documents/42/individualProject/repo_tr/backend/blockchain/contracts/Tournament.sol": {
+      "lastModificationDate": 1757967200365,
+      "contentHash": "25d0ca85ed2fd8633edf6a7c7d15f1bc",
+      "sourceName": "contracts/Tournament.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.28"
+      ],
+      "artifacts": [
+        "Tournament"
+      ]
+    }
+  }
+}

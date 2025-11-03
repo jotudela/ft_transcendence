@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "CommonJS",
+    "rootDir": "./",        // la racine du projet
+    "outDir": "./dist",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true
+  },
+  "include": ["*.ts", "src/**/*.ts"],  // inclure server.ts + tous les fichiers sous src/
+  "exclude": ["node_modules", "dist"]
+}
