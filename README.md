@@ -13,7 +13,7 @@ More than a technical milestone, `ft_transcendence` reflects the 42 ethos: innov
 # 🛠️  Program Specificities and Considerations
 ---
 
-## 🧠 BACKEND
+### 🧠 BACKEND
 
 - Framework: Built with `Fastify` and `Node.js`.
 - Microservices: The backend is **modularized as microservices**, making it easy to scale and maintain.
@@ -22,7 +22,7 @@ More than a technical milestone, `ft_transcendence` reflects the 42 ethos: innov
 - Infra: It must build all the projet with one command and all microservice is launched in containers with `Docker`.
 ---
 
-## 🖼️ FRONTEND
+### 🖼️ FRONTEND
 
 - Language: Built with `Typesrcipt` as base code.
 - Framework: The hamonization of our project is built in `Tailwind CSS`.
@@ -30,7 +30,7 @@ More than a technical milestone, `ft_transcendence` reflects the 42 ethos: innov
 - Comptability: It must work with the latests version of your web browsers for example `Google`, `Mozila`, `Firefox` or `Safari`.
 ---
 
-## 🔒 SECURITY
+### 🔒 SECURITY
 
 - JWT Authentication: All connection are linked to **JWT Token**.
 - OAuth 2.0: Implement Google auth, for connect your Google account.
@@ -49,7 +49,7 @@ More than a technical milestone, `ft_transcendence` reflects the 42 ethos: innov
 - Game Customization: In the background in a game, you can change the color (blue, red, green).
 ---
 
-## 👥 USER MANAGEMENT and STATS
+### 👥 USER MANAGEMENT and STATS
 
 - Profile: You can see your information and modify in **Settings**.
 - Stats: You have two differents Tabs for stats:
@@ -57,7 +57,7 @@ More than a technical milestone, `ft_transcendence` reflects the 42 ethos: innov
   - `Match History`: see all your match, only loged 1vs1 and 1vs1 in tournaments.
 ---
 
-# ✨ ALL MODULES
+### ✨ ALL MODULES
 
 | Number | Name |
 | :---:  | :---:|
@@ -82,6 +82,7 @@ More than a technical milestone, `ft_transcendence` reflects the 42 ethos: innov
 ---
 
 # 🔧 GLOBAL TECH STACK:
+
 - Backend: Typescript, Fastify, Node.js, API, NGINX, Docker
 - Frontend: Typescript, HTML, Tailwind CSS
 - Auth & Security: JWT, 2FA with Authenticator, OAuth 2.0 (Google)
