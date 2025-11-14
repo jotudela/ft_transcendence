@@ -97,5 +97,5 @@ My final grade :
 ### 👨‍💻 Authors
 
 - Arnaud Fontan ([@afontan](https://github.com/arnaudfontan)): Responssible of the frontend and game.
-- ([@ReIVen](https://github.com/ReivenIV)): Responssible of the Database and Backend.
+- [@ReIVen](https://github.com/ReivenIV): Responssible of the Database and Backend.
 - Joan Tudela ([@Jolinkan](https://github.com/jotudela)): Responssible of all infrastructure, Backend and settings in frontend.
