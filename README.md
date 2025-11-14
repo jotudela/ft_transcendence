@@ -98,4 +98,4 @@ My final grade :
 
 - Arnaud Fontan ([@afontan](https://github.com/arnaudfontan)): Responssible of the frontend and game.
 - [@ReIVen](https://github.com/ReivenIV): Responssible of the Database and Backend.
-- Joan Tudela ([@Jolinkan](https://github.com/jotudela)): Responssible of all infrastructure, Backend and settings in frontend.
+- Joan Tudela ([@Jolinkan](https://github.com/jotudela)): Responssible of all infrastructure, Backend, Blockchain management and settings in frontend.
